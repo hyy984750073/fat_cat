@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import './action/trigger_demo.dart';
+import './demo/navigator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +27,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
-
+  // 状态
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -40,9 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // 头部左右边的导航
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true
       ),
       body: Center(
         child: Column(
@@ -54,6 +59,20 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
+            ),
+            // 自己写的点击事件
+            Trigger(),
+            CupertinoButton(
+              child: Text('可以点击的按钮'),
+              onPressed: () {
+                print('被点击啦');
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    // 对应页面
+                    return NavigatorDemo();
+                  },
+                ));
+              }
             ),
           ],
         ),
