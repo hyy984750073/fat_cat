@@ -68,10 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 print('被点击啦');
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
-                    // 对应页面
-                    return NavigatorDemo();
+                    // 对应页面 路由传参
+                    return NavigatorDemo(id: '1234');
                   },
-                ));
+                  settings: RouteSettings(
+                    name: 'menu',
+                    arguments: {'name': 'Lisa'}
+                  ),
+                )).then((value) => print(value));
               }
             ),
           ],

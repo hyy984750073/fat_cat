@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavigatorDemo extends StatelessWidget {
-const NavigatorDemo({ Key? key }) : super(key: key);
+  final String id;
+const NavigatorDemo({ Key? key, required this.id }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
+    // dynamic arguments = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
         title: Text('点击页面')
@@ -13,7 +15,8 @@ const NavigatorDemo({ Key? key }) : super(key: key);
       body: CupertinoButton(
         child: Text('可以点击的按钮1111111'),
         onPressed: () {
-          print('被点击啦');
+          print(this.id);
+          print('被点击啦呀');
         }
       )
     );
