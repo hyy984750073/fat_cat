@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: routes,
-      home: const Login()
+      home: const Login(),
+      // 路由钩子，可以对指定路由进行拦截，有时候不想改变页面结构但是又想要求跳转到这个页面的时候可以用到，比如页面设定了传参你进行跳转的时候
+      // onGenerateRoute: onGenerateRoute,
     );
   }
 }
