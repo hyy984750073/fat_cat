@@ -48,8 +48,10 @@ class _NavigatorDemoState extends State<NavigatorDemo> {
     return Scaffold(
         appBar: AppBar(title: Text(widget.id)),
         body: CupertinoButton(
-            child: Text('可以点击的按钮1111111'),
+            child: Text('返回上一页'),
             onPressed: () {
+              // 返回上一页
+              Navigator.pop(context);
               print('被点击啦呀');
             }));
   }

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import './action/trigger_demo.dart';
 import './demo/navigator.dart';
 import './routes.dart';
-import './user/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,11 +19,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
       // routes: routes,
-      // home: const Login(),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // initialRoute: '/',
       // 路由钩子，可以对指定路由进行拦截，有时候不想改变页面结构但是又想要求跳转到这个页面的时候可以用到，比如页面设定了传参你进行跳转的时候
-      // onGenerateRoute: onGenerateRoute,
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }
@@ -72,16 +71,17 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('可以点击的按钮'),
               onPressed: () {
                 print('被点击啦');
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) {
-                    // 对应页面 路由传参
-                    return NavigatorDemo(id: '我是', age: 15);
-                  },
-                  settings: RouteSettings(
-                    name: 'menu',
-                    arguments: {'name': 'Lisa'}
-                  ),
-                )).then((value) => print(value));
+                // Navigator.of(context).push(MaterialPageRoute(
+                //   builder: (context) {
+                //     // 对应页面 路由传参
+                //     return NavigatorDemo(id: '我是', age: 15);
+                //   },
+                //   settings: RouteSettings(
+                //     name: 'menu',
+                //     arguments: {'name': 'Lisa'}
+                //   ),
+                // )).then((value) => print(value));
+                Navigator.pushNamed(context, '/login', );
               }
             ),
           ],
