@@ -1,4 +1,7 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+// 统一使用IOS风格
+import 'package:flutter/cupertino.dart';
+
 import './user/login.dart';
 import './user/register.dart';
 import './pages/home.dart';
@@ -23,18 +26,25 @@ Map routes = {
 
 // 固定写法
 var onGenerateRoute = (RouteSettings settings) {
-final String? name = settings.name;
+  final String? name = settings.name;
   final Function? pageContentBuilder = routes[name];
   if (pageContentBuilder != null) {
+    // 有arguments参数走这里
     if (settings.arguments != null) {
-      final Route route = MaterialPageRoute(
+      // 统一使用IOS风格
+      final Route route = CupertinoPageRoute(
+      // final Route route = MaterialPageRoute(
           settings: settings,
-          builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
+          builder: (context) =>
+              pageContentBuilder(context, arguments: settings.arguments));
       return route;
     } else {
-      final Route route =
-          MaterialPageRoute(settings: settings,
-              builder: (context) => pageContentBuilder(context));
+      // 没有arguments参数走这里
+      // 统一使用IOS风格
+      final Route route = CupertinoPageRoute(
+      // final Route route = MaterialPageRoute(
+          settings: settings,
+          builder: (context) => pageContentBuilder(context));
       return route;
     }
   }
