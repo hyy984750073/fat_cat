@@ -1,29 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-// class NavigatorDemo extends StatelessWidget {
-//   final String id;
-// const NavigatorDemo({ Key? key, required this.id }) : super(key: key);
-// // const NavigatorDemo({ Key? key, this.id = 'init id' }) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context){
-//     // dynamic arguments = ModalRoute.of(context).settings.arguments;
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('点击页面')
-//       ),
-//       body: CupertinoButton(
-//         child: Text('可以点击的按钮1111111'),
-//         onPressed: () {
-//           print(this.id);
-//           print('被点击啦呀');
-//         }
-//       )
-//     );
-//   }
-// }
-
 class NavigatorDemo extends StatefulWidget {
   final String id;
   final int age;
@@ -40,19 +15,18 @@ class _NavigatorDemoState extends State<NavigatorDemo> {
   @override
   void initState() {
     super.initState();
-    print(widget.age);
+    // print(widget.age);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text(widget.id)),
-        body: CupertinoButton(
-            child: Text('返回上一页'),
+        body: TextButton(
+            child: const Text('返回上一页'),
             onPressed: () {
               // 返回上一页
               Navigator.pop(context);
-              print('被点击啦呀');
             }));
   }
 }

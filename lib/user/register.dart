@@ -12,16 +12,14 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    print('456');
-    print(widget.arguments);
+    // print(widget.arguments);
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('注册页'),
+        title: const Text('注册页'),
       ),
       body: const Center(
         child: Text('这里是注册页'),

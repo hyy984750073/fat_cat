@@ -6,16 +6,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('首页')),
+      appBar: AppBar(title: const Text('首页')),
       body: Center(
           child: Column(
         children: [
-          Text('这里是首页'),
+          const Text('这里是首页'),
           TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
-              child: Text('去登录')),
+              child: const Text('去登录')),
         ],
       )),
     );
