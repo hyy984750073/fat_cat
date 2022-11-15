@@ -7,9 +7,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('首页')),
-      body: const Center(
-        child: Text('这里是首页'),
-      ),
+      body: Center(
+          child: Column(
+        children: [
+          Text('这里是首页'),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              child: Text('去登录')),
+        ],
+      )),
     );
   }
 }

@@ -15,10 +15,10 @@ import './pages/home.dart';
 //   // '/checkUpdate': (context) => CheckUpdateController(),  // 我的页面- 检查版本更新
 // };
 
-Map<String, Widget Function(BuildContext)> routes = {
+Map routes = {
   '/': (content) => HomePage(),
   '/login': (context) => Login(),
-  '/register': (context) => Register(),
+  '/register': (context, {arguments}) => Register(arguments: arguments),
 };
 
 // 固定写法
