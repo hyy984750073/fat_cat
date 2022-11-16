@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
   final Map arguments;
-  const Register({ super.key, required this.arguments });
+  const Register({super.key, required this.arguments});
   // const Register({ Key? key }) : super(key: key);
 
   @override
@@ -15,14 +15,20 @@ class _RegisterState extends State<Register> {
     super.initState();
     // print(widget.arguments);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('注册页'),
       ),
-      body: const Center(
-        child: Text('这里是注册页'),
+      body: Center(
+        child: TextButton(
+          onPressed: () {
+            Navigator.of(context).pushNamedAndRemoveUntil('/tabs', (route) => false);
+          },
+          child: const Text('首页'),
+        ),
       ),
     );
   }

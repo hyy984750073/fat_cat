@@ -6,7 +6,7 @@
 import 'package:flutter/material.dart';
 import './user/login.dart';
 import './user/register.dart';
-import './pages/home.dart';
+import './tabs/tabs.dart';
 
 // Map<String, Widget Function(BuildContext)> routes = {
 //   "/": (context) => HomePage(),
@@ -15,7 +15,8 @@ import './pages/home.dart';
 // };
 
 Map routes = {
-  '/': (content) => const HomePage(),
+  '/': (content) => const TabsView(),
+  '/tabs': (context) => const TabsView(),
   '/login': (context) => const Login(),
   '/register': (context, {arguments}) => Register(arguments: arguments),
 };

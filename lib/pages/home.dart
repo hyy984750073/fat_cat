@@ -5,10 +5,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('首页')),
-      body: Center(
-          child: Column(
+    return Center(
+      child: Column(
         children: [
           const Text('这里是首页'),
           TextButton(
@@ -17,7 +15,7 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('去登录')),
         ],
-      )),
+      ),
     );
   }
 }
