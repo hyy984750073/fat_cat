@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../pages/home.dart';
+import '../pages/business.dart';
+import '../pages/school.dart';
 
 class TabsView extends StatefulWidget {
   const TabsView({super.key});
@@ -15,11 +17,16 @@ class _TabsViewState extends State<TabsView> {
       _selectedIndex = index;
     });
   }
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    BusinessView(),
+    SchoolView(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('标签页')),
-      body: const HomePage(),
+      // appBar: AppBar(title: const Text('标签页')),
+      body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
