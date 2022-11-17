@@ -6,9 +6,9 @@ class BusinessView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Business')),
+      appBar: AppBar(title: const Text('每日学习')),
       body: const Center(
-        child: Text('Business'),
+        child: Text('每日学习'),
       )
     );
   }

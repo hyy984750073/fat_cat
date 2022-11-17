@@ -6,18 +6,42 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('首页')),
-        body: Center(
-          child: Column(
-            children: [
-              const Text('这里是首页'),
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                  child: const Text('去登录')),
-            ],
+      extendBody: true,
+      backgroundColor: const Color(0xfff4f5f6),
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('口袋工作室'),
+      ),
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
+              children: [
+                Image.asset('assets/images/banner.png')
+              ],
+            ),
           ),
-        ));
+          const Text(
+            '服务保障',
+            style: TextStyle(
+              fontSize: 17,
+              color: Color(0xff333333),
+            )
+          ),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              child: const Text('去登录')),
+        ],
+      ),
+    );
   }
 }

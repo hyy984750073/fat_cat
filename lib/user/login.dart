@@ -52,7 +52,8 @@ class _LoginState extends State<Login> {
                         // the form is invalid.
                         if (_formKey.currentState!.validate()) {
                           // Process data.
-                          Navigator.of(context).pushNamedAndRemoveUntil('/tabs', (route) => false);
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              '/tabs', (route) => false);
                         }
                       },
                       child: const Text('登录'),

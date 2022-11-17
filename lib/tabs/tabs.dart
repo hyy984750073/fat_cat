@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/home.dart';
-import '../pages/business.dart';
+// import '../pages/business.dart';
 import '../pages/my.dart';
 
 class TabsView extends StatefulWidget {
@@ -19,13 +19,13 @@ class _TabsViewState extends State<TabsView> {
   }
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    BusinessView(),
+    // BusinessView(),
     MyView(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: const Text('标签页')),
+      extendBody: true,
       body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -33,10 +33,10 @@ class _TabsViewState extends State<TabsView> {
             icon: Icon(Icons.home),
             label: '首页',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: '工作室',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.coffee),
+          //   label: '每日学习',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.ac_unit_rounded),
             label: '我的',
