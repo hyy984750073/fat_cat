@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../pages/home.dart';
 import '../pages/business.dart';
-import '../pages/school.dart';
+import '../pages/my.dart';
 
 class TabsView extends StatefulWidget {
   const TabsView({super.key});
@@ -20,7 +20,7 @@ class _TabsViewState extends State<TabsView> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     BusinessView(),
-    SchoolView(),
+    MyView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -31,15 +31,15 @@ class _TabsViewState extends State<TabsView> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '首页',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: 'Business',
+            label: '工作室',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.ac_unit_rounded),
+            label: '我的',
           ),
         ],
         currentIndex: _selectedIndex,

@@ -20,3 +20,9 @@ samples, guidance on mobile development, and a full API reference.
 2、搜索设置输入“prevent”
 3、把第一个“Editor>Suggest:Snippets Prevent Quick Suggestions 控制活动代码是否阻止快速建议。”的勾选去掉。
 4、使用举例：鼠标放到‘Scaffold’上+Ctrl+单击  即可查看对应的函数详情
+
+
+## 代码风格
+1、文件命名风格lowercase_with_underscores：slider_menu.dart
+2、使用UpperCamelCase 风格：Classes（类名）、 enums（枚举类型）、 typedefs（类型定义）、以及 type parameters（类型参数）、使用元数据注解的类@Foo
+3、注解类的构造函数是无参函数，则可以使用一个 lowerCamelCase 风格的常量来初始化这个注解：@foo
