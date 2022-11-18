@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       backgroundColor: const Color(0xfff4f5f6),
+      // backgroundColor: const Color(0xff000000),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('口袋工作室'),
@@ -29,9 +30,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const Text(
-            '服务保障',
+            '\t  服务保障', // 文本缩进
             style: TextStyle(
               fontSize: 17,
+              height: 2.0,
               color: Color(0xff333333),
             )
           ),
