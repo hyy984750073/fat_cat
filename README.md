@@ -30,3 +30,18 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 色系：洛可可
 由浅到深：#E8E7D2、#D2D5B8、#BDC2BB、#C9BA98 ? #C9BA9B
+
+
+## 制定资源
+Flutter 使用 pubspec.yaml 文件，位于项目根目录，来识别应用程序所需的资源。
+1、指定文件
+flutter:
+  assets:
+    - assets/my_icon.png
+    - assets/background.png
+
+2、如果要包含一个目录下的所有 assets，需要在目录名称的结尾加上 /：
+flutter:
+  assets:
+    - directory/
+    - directory/subdirectory/

@@ -61,8 +61,10 @@ class _LoginState extends State<Login> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, "/register",
+                      var toRegister = Navigator.pushNamed(context, "/register",
                           arguments: {'phone': '15278061180', 'age': 15});
+
+                          toRegister.then((value) => print(value));
                     },
                     child: const Text('去注册'),
                   ),

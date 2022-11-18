@@ -23,13 +23,22 @@ class _RegisterState extends State<Register> {
         title: const Text('注册页'),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () {
-            Navigator.of(context).pushNamedAndRemoveUntil('/tabs', (route) => false);
-          },
-          child: const Text('首页'),
-        ),
-      ),
+          child: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushNamedAndRemoveUntil('/tabs', (route) => false);
+            },
+            child: const Text('首页'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop(15);
+            },
+            child: const Text('返回带参数'),
+          ),
+        ],
+      )),
     );
   }
 }
