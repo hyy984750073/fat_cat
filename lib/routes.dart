@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import './user/login.dart';
 import './user/register.dart';
 import './tabs/tabs.dart';
+import './demo/widgets.dart';
 
 // Map<String, Widget Function(BuildContext)> routes = {
 //   "/": (context) => HomePage(),
@@ -19,6 +20,7 @@ Map routes = {
   '/tabs': (context) => const TabsView(),
   '/login': (context) => const Login(),
   '/register': (context, {arguments}) => Register(arguments: arguments),
+  '/widgets': (context) => const WidgetsDemoPage(),
 };
 
 // 固定写法

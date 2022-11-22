@@ -24,24 +24,25 @@ class HomePage extends StatelessWidget {
               color: Colors.white,
             ),
             child: Column(
-              children: [
-                Image.asset('assets/images/banner.png')
-              ],
+              children: [Image.asset('assets/images/banner.png')],
             ),
           ),
-          const Text(
-            '\t  服务保障', // 文本缩进
-            style: TextStyle(
-              fontSize: 17,
-              height: 2.0,
-              color: Color(0xff333333),
-            )
-          ),
+          const Text('\t  服务保障', // 文本缩进
+              style: TextStyle(
+                fontSize: 17,
+                height: 2.0,
+                color: Color(0xff333333),
+              )),
           TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
               child: const Text('去登录')),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/widgets');
+              },
+              child: const Text('去Demo页面查看')),
         ],
       ),
     );
