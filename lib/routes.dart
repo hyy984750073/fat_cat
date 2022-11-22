@@ -8,6 +8,7 @@ import './user/login.dart';
 import './user/register.dart';
 import './tabs/tabs.dart';
 import './demo/widgets.dart';
+import './demo/grid_view_demo.dart';
 
 // Map<String, Widget Function(BuildContext)> routes = {
 //   "/": (context) => HomePage(),
@@ -21,6 +22,7 @@ Map routes = {
   '/login': (context) => const Login(),
   '/register': (context, {arguments}) => Register(arguments: arguments),
   '/widgets': (context) => const WidgetsDemoPage(),
+  '/grid-view': (context) => const GridViewDemoPage(),
 };
 
 // 固定写法

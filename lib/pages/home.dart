@@ -43,6 +43,11 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/widgets');
               },
               child: const Text('去Demo页面查看')),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/grid-view');
+              },
+              child: const Text('去网格布局页面查看')),
         ],
       ),
     );
