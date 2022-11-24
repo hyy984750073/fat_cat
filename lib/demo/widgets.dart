@@ -30,16 +30,20 @@ class _WidgetsDemoPageState extends State<WidgetsDemoPage> {
             border: Border.all(width: 10, color: Colors.black38),
             borderRadius: const BorderRadius.all(Radius.circular(8)),
           ),
+          /**
+           * Column的宽度为子组件中最大的widget的宽度一样
+           */
           child: Column(
-              // mainAxisSize: MainAxisSize.min,
+              // MainAxisSize.min根据内容的大小而撑开,MainAxisSize.max默认就是最大可占用的空间
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start, // 主轴对齐方式,Column的主轴为竖轴
-              crossAxisAlignment: CrossAxisAlignment.center, // 交叉轴
+              crossAxisAlignment: CrossAxisAlignment.center, // 交叉轴,也就是垂直与主轴的轴
               children: [
                 // 居中
                 const Center(
                   child: Text(
                     'Hello World',
-                    textDirection: TextDirection.ltr,
+                    textDirection: TextDirection.ltr, // ltr 左到右
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w800,
@@ -91,7 +95,6 @@ class _WidgetsDemoPageState extends State<WidgetsDemoPage> {
                 // loading  IOS风格
                 const CupertinoActivityIndicator(),
 
-
                 InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
@@ -104,6 +107,9 @@ class _WidgetsDemoPageState extends State<WidgetsDemoPage> {
                   ),
                 ),
                 // 水平方向列表
+                /**
+                 * Row的横轴为子组件中最大的widget的高度一样
+                 */
                 Row(
                   // 主轴对齐方式,Row的主轴为横轴  MainAxisAlignment为枚举类
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -170,6 +176,26 @@ class _WidgetsDemoPageState extends State<WidgetsDemoPage> {
                     color: Colors.blue[500],
                   ),
                 ),
+
+                Flex(direction: Axis.horizontal, children: [
+                  Expanded(
+                    child: Image.asset('assets/images/eye.png',
+                        fit: BoxFit.contain, // 图片填充模式
+                        color: Colors.red,
+                        height: 50),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Image.asset('assets/images/eye.png', height: 50),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Image.asset(
+                      'assets/images/eye.png',
+                      height: 50,
+                    ),
+                  ),
+                ])
               ]),
         ));
   }

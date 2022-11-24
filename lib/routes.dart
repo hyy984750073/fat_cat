@@ -9,6 +9,7 @@ import './user/register.dart';
 import './tabs/tabs.dart';
 import './demo/widgets.dart';
 import './demo/grid_view_demo.dart';
+import './demo/long_view.dart';
 
 // Map<String, Widget Function(BuildContext)> routes = {
 //   "/": (context) => HomePage(),
@@ -23,6 +24,7 @@ Map routes = {
   '/register': (context, {arguments}) => Register(arguments: arguments),
   '/widgets': (context) => const WidgetsDemoPage(),
   '/grid-view': (context) => const GridViewDemoPage(),
+  '/long-view': (context) => const LongViewDemoPage(),
 };
 
 // 固定写法
