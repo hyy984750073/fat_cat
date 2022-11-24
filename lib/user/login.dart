@@ -15,25 +15,28 @@ class _LoginState extends State<Login> {
   final TextEditingController _controllerUser = TextEditingController();
   final FocusNode _userNode = FocusNode();
   final FocusNode _passwordNode = FocusNode();
-  // FocusScopeNode _focusScopeNode;
+  late FocusScopeNode _focusScopeNode;
 
   // 进来时
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   // 退出时
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     // 退出时注释掉那些很占用内存的东西，否则占用内存
     _controllerPassword.dispose();
     _controllerUser.dispose();
     _userNode.dispose();
     _passwordNode.dispose();
+    /* TODO:销毁的的话会提示：The following assertion was thrown while finalizing
+        the widget tree:
+        A FocusScopeNode was used after being disposed.
+        Once you have called dispose() on a FocusScopeNode,
+        it can no longer be used. */
     // if (_focusScopeNode != null) _focusScopeNode.dispose();
   }
 
@@ -112,14 +115,15 @@ class _LoginState extends State<Login> {
                         print('账号${_controllerUser.text}');
                         print(_formKey.currentState!.validate().toString());
 
-                        // // 为空的时候给它赋值
+                        // // 为空的时候给它赋值   TODO:这个赋值会报错，提示未初始化
                         // if (_focusScopeNode == null) {
                         //   _focusScopeNode = FocusScope.of(context);
                         // }
-                        // // 有值之后,将光标给到‘账号’
-                        // _focusScopeNode.requestFocus(_userNode);
-                        // // 不想要焦点,可以让界面所有的焦点消失
-                        // _focusScopeNode.unfocus();
+                        _focusScopeNode = FocusScope.of(context);
+                        // 有值之后,将光标给到‘账号’
+                        _focusScopeNode.requestFocus(_userNode);
+                        // 不想要焦点,可以让界面所有的焦点消失
+                        _focusScopeNode.unfocus();
 
                         /**
                          * (_formKey.currentState as FormState).validate()
