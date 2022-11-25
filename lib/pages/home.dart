@@ -53,11 +53,16 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/long-view');
               },
               child: const Text('去可滚动页面-ListView')),
-          TextButton(
+          TextButton( 
               onPressed: () {
                 Navigator.pushNamed(context, '/wrap-view');
               },
               child: const Text('去流式布局页面-Wrap')),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/stack-view');
+              },
+              child: const Text('去层叠布局页面-Wrap')),
         ],
       ),
     );
