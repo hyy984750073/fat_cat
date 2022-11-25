@@ -10,6 +10,7 @@ import './tabs/tabs.dart';
 import './demo/widgets.dart';
 import './demo/grid_view_demo.dart';
 import './demo/long_view.dart';
+import './demo/wrap_view.dart';
 
 // Map<String, Widget Function(BuildContext)> routes = {
 //   "/": (context) => HomePage(),
@@ -25,6 +26,7 @@ Map routes = {
   '/widgets': (context) => const WidgetsDemoPage(),
   '/grid-view': (context) => const GridViewDemoPage(),
   '/long-view': (context) => const LongViewDemoPage(),
+  '/wrap-view': (context) => const WrapViewDemoPage(),
 };
 
 // 固定写法
