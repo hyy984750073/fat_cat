@@ -15,6 +15,11 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## 项目flutter run的问题
+D:\workspace\fat_cat\android\gradle.properties   
+下的这行代码：org.gradle.java.home= D:/Android/jdk-11.0.16
+在自己的笔记本上要注释掉，公司的环境上要放开，因为两个环境的android-sdk的版本不一致
+
 ## Vscode如何及时提示Flutter代码
 1、文件-》首选项-》设置
 2、搜索设置输入“prevent”
